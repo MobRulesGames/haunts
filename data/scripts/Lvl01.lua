@@ -166,7 +166,7 @@ function RoundStart(intruders, round)
     if intruders then
       intrudersSetup() 
     else
-      -- Script.DialogBox("ui/dialog/Lvl01/Opening_Denizens.json")
+      Script.DialogBox("ui/dialog/Lvl01/Opening_Denizens.json")
       denizensSetup()
     end
     Script.SetLosMode("intruders", "entities")
@@ -493,7 +493,7 @@ function RoundEnd(intruders, round)
       if not bIntruderIntroDone then
         bIntruderIntroDone = true
         Script.DialogBox("ui/dialog/Lvl01/pass_to_intruders.json")
-        -- Script.DialogBox("ui/dialog/Lvl01/Opening_Intruders.json")
+        Script.DialogBox("ui/dialog/Lvl01/Opening_Intruders.json")
         bSkipOtherChecks = true
       end
 
