@@ -660,7 +660,7 @@ func (e *Entity) SetGear(gear_name string) bool {
     return false
   }
   if gear_name == "" {
-    algorithm.Choose(&e.Actions, func(a Action) bool {
+    algorithm.Choose2(&e.Actions, func(a Action) bool {
       return a.String() != e.ExplorerEnt.Gear.Action
     })
     if e.ExplorerEnt.Gear.Condition != "" {

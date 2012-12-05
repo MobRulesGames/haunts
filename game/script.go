@@ -1592,7 +1592,7 @@ func setWaypoint(gp *GamePanel) lua.GoFunction {
     }
     wp.Name = L.ToString(-4)
     // Remove any existing waypoint by the same name
-    algorithm.Choose(&gp.game.Waypoints, func(w waypoint) bool {
+    algorithm.Choose2(&gp.game.Waypoints, func(w waypoint) bool {
       return w.Name != wp.Name
     })
     px, py := LuaToPoint(L, -2)

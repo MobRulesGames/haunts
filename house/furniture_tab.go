@@ -104,7 +104,7 @@ func (w *FurniturePanel) onEscape() {
       *w.furniture = *w.prev_object
       w.prev_object = nil
     } else {
-      algorithm.Choose(&w.Room.Furniture, func(f *Furniture) bool {
+      algorithm.Choose2(&w.Room.Furniture, func(f *Furniture) bool {
         return f != w.furniture
       })
     }
@@ -128,7 +128,7 @@ func (w *FurniturePanel) Respond(ui *gui.Gui, group gui.EventGroup) bool {
   // If we hit delete then we want to remove the furniture we're moving around
   // from the room.  If we're not moving anything around then nothing happens.
   if found, event := group.FindEvent(gin.DeleteOrBackspace); found && event.Type == gin.Press {
-    algorithm.Choose(&w.Room.Furniture, func(f *Furniture) bool {
+    algorithm.Choose2(&w.Room.Furniture, func(f *Furniture) bool {
       return f != w.furniture
     })
     w.furniture = nil

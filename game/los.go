@@ -470,7 +470,7 @@ func (g *Game) OnRound(do_scripts bool) {
       g.viewer.RemoveDrawable(g.Ents[i])
     }
   }
-  algorithm.Choose(&g.Ents, func(ent *Entity) bool {
+  algorithm.Choose2(&g.Ents, func(ent *Entity) bool {
     return ent.Stats == nil || ent.Stats.HpCur() > 0
   })
 
